@@ -1,76 +1,51 @@
-import { NextResponse } from 'next/server';
-import { initWaitlistTable, addToWaitlist, getAllWaitlistEmails } from '@/lib/db';
+import { NextRequest, NextResponse } from 'next/server';
+import { Pool } from 'pg';
 
-// Inicializa la tabla waitlist al cargar la API
-initWaitlistTable().catch(error => {
-  console.error('Failed to initialize waitlist table:', error);
+// Initialize connection pool
+const pool = new Pool({
+  connectionString: process.env.POSTGRES_URL_NON_POOLING,
 });
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
   try {
-    // Obtener los datos del request
-    const body = await request.json();
-    const { email } = body;
+    const { email } = await request.json();
     
-    // Validación básica
-    if (!email || !email.includes('@')) {
-      return NextResponse.json(
-        { success: false, message: 'El email es inválido' },
-        { status: 400 }
-      );
+    // Validate email
+    if (!email || typeof email !== 'string' || !email.includes('@')) {
+      return NextResponse.json({ error: 'Invalid email address' }, { status: 400 });
     }
     
-    // Añadir email a la base de datos PostgreSQL
-    const result = await addToWaitlist(email);
-    
-    // Determinar el status code basado en si es un email nuevo o existente
-    const statusCode = result.isNew ? 201 : 200;
-    
-    // Retornar respuesta exitosa
-    return NextResponse.json(
-      { success: true, message: result.message },
-      { status: statusCode }
+    // Check if email already exists
+    const checkResult = await pool.query(
+      'SELECT * FROM waitlist WHERE email = $1',
+      [email]
     );
+    
+    if (checkResult.rowCount > 0) {
+      return NextResponse.json({ message: 'Email already registered' }, { status: 200 });
+    }
+    
+    // Insert new email
+    await pool.query(
+      'INSERT INTO waitlist (email) VALUES ($1)',
+      [email]
+    );
+    
+    console.log(`Added email to waitlist: ${email}`);
+    return NextResponse.json({ success: true }, { status: 200 });
   } catch (error) {
-    console.error('Error al procesar la solicitud:', error);
-    return NextResponse.json(
-      { success: false, message: 'Error interno del servidor' },
-      { status: 500 }
-    );
+    console.error('Error adding email to waitlist:', error);
+    return NextResponse.json({ error: 'Failed to join waitlist' }, { status: 500 });
   }
 }
 
-// Obtener la lista de correos (protegido con token)
-export async function GET(request: Request) {
+export async function GET(request: NextRequest) {
+  // Versión simplificada sin verificación de token
   try {
-    // Extraer el token de la URL
-    const url = new URL(request.url);
-    const token = url.searchParams.get('token');
-    
-    // Verificar el token (usando variable de entorno)
-    const ADMIN_TOKEN = process.env.ADMIN_TOKEN || 'ad-simulator-secret-token';
-    
-    if (!token || token !== ADMIN_TOKEN) {
-      return NextResponse.json(
-        { success: false, message: 'Acceso no autorizado' },
-        { status: 401 }
-      );
-    }
-    
-    // Obtener emails de la base de datos PostgreSQL
-    const emails = await getAllWaitlistEmails();
-    
-    // Retornar la lista de correos
-    return NextResponse.json({ 
-      success: true, 
-      count: emails.length,
-      emails 
-    });
+    const result = await pool.query('SELECT * FROM waitlist ORDER BY created_at DESC');
+    return NextResponse.json({ emails: result.rows }, { status: 200 });
   } catch (error) {
-    console.error('Error al procesar la solicitud:', error);
-    return NextResponse.json(
-      { success: false, message: 'Error interno del servidor' },
-      { status: 500 }
-    );
+    console.error('Error fetching waitlist:', error);
+    return NextResponse.json({ error: 'Failed to fetch waitlist' }, { status: 500 });
   }
 } 
