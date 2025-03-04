@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "PixelFont";
+  src: url("/fonts/pixel-font.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --background: 0 0% 3.9%;
+  --foreground: 0 0% 98%;
+  --card: 0 0% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --popover: 0 0% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 142.1 70.6% 45.3%;
+  --primary-foreground: 144.9 80.4% 10%;
+  --secondary: 240 3.7% 15.9%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 0 0% 14.9%;
+  --muted-foreground: 0 0% 63.9%;
+  --accent: 12 6.5% 15.1%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --ring: 142.1 70.6% 45.3%;
+
+  --pixel-green: #3dd42b;
+  --pixel-dark: #121212;
+  --pixel-border: #2a2a2a;
+  --pixel-light-gray: #aaaaaa;
+  --pixel-yellow: #ffd700;
+  --pixel-red: #ff4545;
+  --pixel-card: #1a1a1a;
+}
+
+body {
+  @apply bg-pixel-dark text-foreground;
+}
+
+.font-pixel {
+  font-family: "PixelFont", monospace;
+  letter-spacing: 0.05em;
+}
+
+.bg-pixel-pattern {
+  background-color: #121212;
+  background-image: linear-gradient(rgba(42, 42, 42, 0.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(42, 42, 42, 0.3) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.shadow-pixel {
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.5);
+}
+
+.shadow-pixel-sm {
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.blink-animation {
+  animation: blink 1.5s infinite;
+}
+
