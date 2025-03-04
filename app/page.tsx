@@ -61,12 +61,20 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            
             <div className="flex items-center justify-center">
-              <div className="relative h-64 w-64 md:h-80 md:w-80">
+              <div className="relative w-full max-w-[640px] aspect-video">
                 <div className="absolute inset-0 rounded-lg border-4 border-pixel-border bg-pixel-dark shadow-pixel"></div>
-                <div className="absolute inset-4 rounded-lg border-2 border-pixel-green bg-pixel-dark"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="font-pixel text-4xl text-pixel-green">GAME</span>
+                <div className="absolute inset-4 rounded-lg border-2 border-pixel-green bg-pixel-dark overflow-hidden">
+                  <video 
+                    className="w-full h-full object-contain"
+                    src="/video/demo.mp4" 
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    controls
+                  />
                 </div>
               </div>
             </div>
