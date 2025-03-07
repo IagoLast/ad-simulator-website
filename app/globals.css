@@ -47,6 +47,10 @@ body {
   @apply bg-pixel-dark text-foreground;
 }
 
+.font-play {
+  font-family: 'Play', sans-serif;
+}
+
 .font-pixel {
   font-family: "PixelFont", monospace;
   letter-spacing: 0.05em;

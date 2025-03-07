@@ -138,15 +138,9 @@ export default function Home() {
                     WIN REAL MONEY!
                   </h3>
                   <p className="font-pixel text-pixel-light-gray text-lg mb-3">
-                    All advertising revenue is accumulated into a weekly prize
-                    pool. Every Friday, a special competitive mode is activated
-                    where the best teams compete to claim the prize.
-                  </p>
-                  <p className="font-pixel text-white">
-                    <span className="text-pixel-green font-bold">
-                      The more advertisers we have, the bigger the prize pool
-                      grows!
-                    </span>
+                    All advertising revenue is accumulated into a prize pool.
+                    When competitive mode is activated, the best teams compete
+                    to claim the prize.
                   </p>
                 </div>
               </div>

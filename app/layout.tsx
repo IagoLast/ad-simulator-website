@@ -1,10 +1,14 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter, Press_Start_2P } from "next/font/google"
+import { Play, Press_Start_2P } from "next/font/google"
 import "./globals.css"
 import './db-init'
 
-const inter = Inter({ subsets: ["latin"] })
+const play = Play({ 
+  weight: ['400', '700'],
+  subsets: ["latin"],
+  display: 'swap',
+})
 const pressStart = Press_Start_2P({ 
   weight: '400',
   subsets: ["latin"],
@@ -26,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} ${pressStart.variable}`}>{children}</body>
+      <body className={`${play.className} ${pressStart.variable}`}>{children}</body>
     </html>
   )
 }

@@ -18,7 +18,9 @@ module.exports = {
     },
     extend: {
       fontFamily: {
+        sans: ['Play', 'sans-serif'],
         game: ['var(--font-press-start)'],
+        play: ['Play', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
