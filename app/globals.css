@@ -38,6 +38,9 @@
   --pixel-yellow: #ffd700;
   --pixel-red: #ff4545;
   --pixel-card: #1a1a1a;
+  --pixel-blue: #3b82f6;
+  --pixel-team-red: #ff4545;
+  --pixel-team-blue: #3b82f6;
 }
 
 body {
@@ -46,6 +49,11 @@ body {
 
 .font-pixel {
   font-family: "PixelFont", monospace;
+  letter-spacing: 0.05em;
+}
+
+.font-game {
+  font-family: var(--font-press-start), monospace;
   letter-spacing: 0.05em;
 }
 
@@ -76,5 +84,28 @@ body {
 
 .blink-animation {
   animation: blink 1.5s infinite;
+}
+
+.team-red {
+  color: var(--pixel-team-red);
+  border-color: var(--pixel-team-red);
+}
+
+.team-blue {
+  color: var(--pixel-team-blue);
+  border-color: var(--pixel-team-blue);
+}
+
+.flag-animation {
+  animation: wave 2s ease-in-out infinite;
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
 }
 

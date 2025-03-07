@@ -17,6 +17,9 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        game: ['var(--font-press-start)'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -60,6 +63,9 @@ module.exports = {
           yellow: "var(--pixel-yellow)",
           red: "var(--pixel-red)",
           card: "var(--pixel-card)",
+          blue: "var(--pixel-blue)",
+          "team-red": "var(--pixel-team-red)",
+          "team-blue": "var(--pixel-team-blue)",
         },
       },
       borderRadius: {
@@ -76,10 +82,15 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: 0 },
         },
+        wave: {
+          "0%, 100%": { transform: "rotate(-5deg)" },
+          "50%": { transform: "rotate(5deg)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "flag-wave": "wave 2s ease-in-out infinite",
       },
     },
   },

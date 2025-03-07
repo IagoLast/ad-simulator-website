@@ -27,7 +27,7 @@ export function WaitlistForm() {
   if (submitted) {
     return (
       <div className="rounded-lg border-2 border-pixel-green bg-pixel-green/10 p-6 text-center">
-        <h3 className="mb-2 font-pixel text-xl text-pixel-green">You're on the list!</h3>
+        <h3 className="mb-2 font-game text-xl text-pixel-green">You're on the list!</h3>
         <p className="font-pixel text-pixel-light-gray">
           We'll notify you when AD SIMULATOR is ready to play. Get ready for battle!
         </p>
