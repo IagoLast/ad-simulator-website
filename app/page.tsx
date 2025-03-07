@@ -45,34 +45,9 @@ export default function Home() {
       <header className="border-b border-pixel-border bg-pixel-dark px-4 py-4">
         <div className="container mx-auto flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Flag className="h-6 w-6 text-pixel-green flag-animation" />
             <span className="font-game text-xl text-white">AD SIMULATOR</span>
           </div>
           <nav className="hidden space-x-4 md:block">
-            <Link
-              href="#features"
-              className="font-pixel text-pixel-green hover:text-pixel-yellow"
-            >
-              Features
-            </Link>
-            <Link
-              href="#how-to-play"
-              className="font-pixel text-pixel-green hover:text-pixel-yellow"
-            >
-              How to Play
-            </Link>
-            <Link
-              href="#prizes"
-              className="font-pixel text-pixel-green hover:text-pixel-yellow"
-            >
-              Prizes
-            </Link>
-            <Link
-              href="#advertise"
-              className="font-pixel text-pixel-green hover:text-pixel-yellow"
-            >
-              Advertise
-            </Link>
             <Link
               href="#waitlist"
               className="font-pixel text-pixel-green hover:text-pixel-yellow"
@@ -80,7 +55,12 @@ export default function Home() {
               Join Waitlist
             </Link>
           </nav>
-          <Button variant="pixel" size="sm" className="hidden md:inline-flex">
+          <Button
+            disabled
+            variant="pixel"
+            size="sm"
+            className="hidden md:inline-flex"
+          >
             Play Now
           </Button>
         </div>
@@ -89,16 +69,11 @@ export default function Home() {
         <section className="bg-pixel-pattern px-4 py-16 md:py-24">
           <div className="container mx-auto grid gap-8 md:grid-cols-2 md:gap-12">
             <div className="flex flex-col justify-center space-y-6">
-              <div className="inline-block rounded bg-pixel-dark px-4 py-1">
-                <span className="font-game text-sm text-pixel-yellow">
-                  COMING SOON
-                </span>
-              </div>
-              <h1 className="font-game font-bold text-4xl text-white md:text-5xl lg:text-6xl">
+              <h1 className="font-game font-bold text-3xl text-white md:text-4xl lg:text-5xl">
                 AD <span className="text-pixel-green">SIMULATOR</span>
               </h1>
-              <p className="max-w-[600px] font-pixel text-lg text-pixel-light-gray">
-                A fast-paced FPS shooter where you capture the flag in a world dominated by advertisements. Battle through billboard-filled arenas and secure your victory!
+              <p className="max-w-[600px] font-pixel text-lg text-pixel-light-gray font-game">
+                Capture the flag in a world dominated by advertisements.
               </p>
               <form
                 onSubmit={handleJumboSubmit}
@@ -143,24 +118,35 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="prizes" className="bg-pixel-dark px-4 py-16 border-t border-pixel-border">
+        <section
+          id="prizes"
+          className="bg-pixel-dark px-4 py-16 border-t border-pixel-border"
+        >
           <div className="container mx-auto max-w-5xl">
             <h2 className="mb-8 text-center font-game text-3xl text-white md:text-4xl">
-              REAL MONEY <span className="text-pixel-yellow blink-animation">PRIZES</span>
+              REAL MONEY{" "}
+              <span className="text-pixel-yellow blink-animation">PRIZES</span>
             </h2>
-            
+
             <div className="mb-10 bg-pixel-card border-2 border-pixel-yellow p-6 rounded-lg shadow-pixel">
               <div className="flex flex-col md:flex-row gap-8 items-center">
                 <div className="bg-pixel-dark rounded-full p-4 w-32 h-32 flex items-center justify-center">
                   <Coins className="w-16 h-16 text-pixel-yellow" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="mb-4 font-game text-2xl text-pixel-yellow">WIN REAL MONEY!</h3>
+                  <h3 className="mb-4 font-game text-2xl text-pixel-yellow">
+                    WIN REAL MONEY!
+                  </h3>
                   <p className="font-pixel text-pixel-light-gray text-lg mb-3">
-                    All advertising revenue is accumulated into a weekly prize pool. Every Friday, a special competitive mode is activated where the best teams compete to claim the prize.
+                    All advertising revenue is accumulated into a weekly prize
+                    pool. Every Friday, a special competitive mode is activated
+                    where the best teams compete to claim the prize.
                   </p>
                   <p className="font-pixel text-white">
-                    <span className="text-pixel-green font-bold">The more advertisers we have, the bigger the prize pool grows!</span>
+                    <span className="text-pixel-green font-bold">
+                      The more advertisers we have, the bigger the prize pool
+                      grows!
+                    </span>
                   </p>
                 </div>
               </div>
@@ -168,21 +154,30 @@ export default function Home() {
 
             <div className="grid md:grid-cols-3 gap-6">
               <div className="border-2 border-pixel-border bg-pixel-card p-6 rounded-lg shadow-pixel text-center">
-                <h3 className="font-game text-xl text-white mb-4">Competitive Mode</h3>
+                <h3 className="font-game text-xl text-white mb-4">
+                  Competitive Mode
+                </h3>
                 <p className="font-pixel text-pixel-light-gray">
-                  Activated every Friday at 8:00 PM. Participate with your team in intense CTF battles.
+                  Activated every Friday at 8:00 PM. Participate with your team
+                  in intense CTF battles.
                 </p>
               </div>
               <div className="border-2 border-pixel-border bg-pixel-card p-6 rounded-lg shadow-pixel text-center">
-                <h3 className="font-game text-xl text-white mb-4">Weekly Prize</h3>
+                <h3 className="font-game text-xl text-white mb-4">
+                  Weekly Prize
+                </h3>
                 <p className="font-pixel text-pixel-light-gray">
-                  The winning team takes the accumulated prize pool. Direct bank transfer to players.
+                  The winning team takes the accumulated prize pool. Direct bank
+                  transfer to players.
                 </p>
               </div>
               <div className="border-2 border-pixel-border bg-pixel-card p-6 rounded-lg shadow-pixel text-center">
-                <h3 className="font-game text-xl text-white mb-4">Leaderboards</h3>
+                <h3 className="font-game text-xl text-white mb-4">
+                  Leaderboards
+                </h3>
                 <p className="font-pixel text-pixel-light-gray">
-                  Permanent ranking table. Special bonuses for the most consistent players.
+                  Permanent ranking table. Special bonuses for the most
+                  consistent players.
                 </p>
               </div>
             </div>
@@ -209,7 +204,8 @@ export default function Home() {
                   Capture The Flag
                 </h3>
                 <p className="font-pixel text-pixel-light-gray">
-                  Infiltrate enemy territory, seize their flag, and navigate back to your base while fighting off opponents.
+                  Infiltrate enemy territory, seize their flag, and navigate
+                  back to your base while fighting off opponents.
                 </p>
               </div>
               <div className="rounded-lg border-2 border-pixel-border bg-pixel-card p-6 shadow-pixel">
@@ -220,7 +216,8 @@ export default function Home() {
                   FPS Action
                 </h3>
                 <p className="font-pixel text-pixel-light-gray">
-                  Fast-paced first-person shooter gameplay with various weapons and tactical opportunities for team combat.
+                  Fast-paced first-person shooter gameplay with various weapons
+                  and tactical opportunities for team combat.
                 </p>
               </div>
               <div className="rounded-lg border-2 border-pixel-border bg-pixel-card p-6 shadow-pixel">
@@ -231,7 +228,8 @@ export default function Home() {
                   Ad Billboards
                 </h3>
                 <p className="font-pixel text-pixel-light-gray">
-                  Navigate a world filled with billboard advertisements from real companies. Use them for cover or as landmarks!
+                  Navigate a world filled with billboard advertisements from
+                  real companies. Use them for cover or as landmarks!
                 </p>
               </div>
               <div className="rounded-lg border-2 border-pixel-border bg-pixel-card p-6 shadow-pixel">
@@ -242,7 +240,8 @@ export default function Home() {
                   Voice Chat
                 </h3>
                 <p className="font-pixel text-pixel-light-gray">
-                  Real-time voice communication with your teammates for strategic coordination and immersive gameplay experience.
+                  Real-time voice communication with your teammates for
+                  strategic coordination and immersive gameplay experience.
                 </p>
               </div>
             </div>
@@ -261,7 +260,8 @@ export default function Home() {
                 </div>
                 <h3 className="mb-2 font-game text-xl text-white">Join Team</h3>
                 <p className="font-pixel text-pixel-light-gray">
-                  Enter a match and be assigned to either the red or blue team to begin the battle.
+                  Enter a match and be assigned to either the red or blue team
+                  to begin the battle.
                 </p>
               </div>
               <div className="flex flex-col items-center text-center">
@@ -272,7 +272,8 @@ export default function Home() {
                   Defend Base
                 </h3>
                 <p className="font-pixel text-pixel-light-gray">
-                  Protect your team's flag from enemy players attempting to capture it.
+                  Protect your team's flag from enemy players attempting to
+                  capture it.
                 </p>
               </div>
               <div className="flex flex-col items-center text-center">
@@ -283,18 +284,18 @@ export default function Home() {
                   Capture Flag
                 </h3>
                 <p className="font-pixel text-pixel-light-gray">
-                  Infiltrate the enemy base, grab their flag, and carry it back to your base to score.
+                  Infiltrate the enemy base, grab their flag, and carry it back
+                  to your base to score.
                 </p>
               </div>
               <div className="flex flex-col items-center text-center">
                 <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-pixel-dark font-game text-2xl text-pixel-green">
                   4
                 </div>
-                <h3 className="mb-2 font-game text-xl text-white">
-                  Win Match
-                </h3>
+                <h3 className="mb-2 font-game text-xl text-white">Win Match</h3>
                 <p className="font-pixel text-pixel-light-gray">
-                  The first team to reach the target number of flag captures wins the match!
+                  The first team to reach the target number of flag captures
+                  wins the match!
                 </p>
               </div>
             </div>
@@ -313,7 +314,13 @@ export default function Home() {
               </span>
             </h2>
             <p className="mb-10 text-center font-pixel text-pixel-light-gray max-w-2xl mx-auto">
-              Place your brand on in-game billboards throughout the arena. Players will see your ads as they navigate the battlefield in search of the enemy flag. <span className="text-pixel-yellow">Part of your advertising budget goes into the weekly prize pool for players!</span>
+              Place your brand on in-game billboards throughout the arena.
+              Players will see your ads as they navigate the battlefield in
+              search of the enemy flag.{" "}
+              <span className="text-pixel-yellow">
+                Part of your advertising budget goes into the weekly prize pool
+                for players!
+              </span>
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
@@ -354,23 +361,28 @@ export default function Home() {
                     <span className="text-pixel-yellow font-bold">
                       High Visibility:
                     </span>{" "}
-                    Players will constantly see your ads as they navigate the map.
+                    Players will constantly see your ads as they navigate the
+                    map.
                   </p>
                   <p>
                     <span className="text-pixel-yellow font-bold">
                       Strategic Placement:
                     </span>{" "}
-                    Billboards can be used as landmarks and meeting points, increasing brand recognition.
+                    Billboards can be used as landmarks and meeting points,
+                    increasing brand recognition.
                   </p>
                   <p>
                     <span className="text-pixel-yellow font-bold">
                       Support Competitors:
                     </span>{" "}
-                    Your ad budget directly contributes to the prize pools that motivate players and increase engagement.
+                    Your ad budget directly contributes to the prize pools that
+                    motivate players and increase engagement.
                   </p>
                   <div className="mt-6">
                     <Button variant="pixel" className="w-full" asChild>
-                      <a href="mailto:info+adsimulator@timetime.in">Request Ad Info</a>
+                      <a href="mailto:info+adsimulator@timetime.in">
+                        Request Ad Info
+                      </a>
                     </Button>
                   </div>
                 </div>
@@ -380,7 +392,8 @@ export default function Home() {
             <div className="mt-12 text-center">
               <div className="inline-block rounded-lg border-2 border-pixel-yellow bg-pixel-yellow/10 p-4 shadow-pixel">
                 <p className="font-game text-pixel-yellow">
-                  Early advertisers get premium billboard locations at discounted rates!
+                  Early advertisers get premium billboard locations at
+                  discounted rates!
                 </p>
               </div>
             </div>
@@ -407,9 +420,7 @@ export default function Home() {
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
             <div className="flex items-center gap-2">
               <Flag className="h-5 w-5 text-pixel-green flag-animation" />
-              <span className="font-game text-lg text-white">
-                AD SIMULATOR
-              </span>
+              <span className="font-game text-lg text-white">AD SIMULATOR</span>
             </div>
             <div className="flex gap-6">
               <Link
@@ -433,7 +444,8 @@ export default function Home() {
             </div>
             <div className="text-center md:text-right">
               <p className="font-pixel text-sm text-pixel-light-gray">
-                &copy; {new Date().getFullYear()} AD SIMULATOR. All rights reserved.
+                &copy; {new Date().getFullYear()} AD SIMULATOR. All rights
+                reserved.
               </p>
             </div>
           </div>
