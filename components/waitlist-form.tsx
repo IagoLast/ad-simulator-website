@@ -1,8 +1,7 @@
 "use client"
 
 import type React from "react"
-
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { ArrowRight } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
@@ -12,25 +11,42 @@ export function WaitlistForm() {
   const [email, setEmail] = useState("")
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [redirecting, setRedirecting] = useState(false)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-
-    setLoading(false)
-    setSubmitted(true)
+    try {
+      // Simulate API call
+      await new Promise((resolve) => setTimeout(resolve, 1000))
+      
+      setLoading(false)
+      setSubmitted(true)
+      setRedirecting(true)
+      
+      // Redirect after showing success message for 2 seconds
+      setTimeout(() => {
+        window.location.href = "https://add-simulator-up6rf.ondigitalocean.app/"
+      }, 2000)
+    } catch (error) {
+      console.error("Error:", error)
+      setLoading(false)
+    }
   }
 
   if (submitted) {
     return (
       <div className="rounded-lg border-2 border-pixel-green bg-pixel-green/10 p-6 text-center">
         <h3 className="mb-2 font-game text-lg text-pixel-green sm:text-xl">You're on the list!</h3>
-        <p className="font-pixel text-pixel-light-gray">
-          We'll notify you when AD SIMULATOR is ready to play. Get ready for battle!
+        <p className="font-pixel text-pixel-light-gray mb-2">
+          We'll notify you when AD SIMULATOR launches. Get ready for battle!
         </p>
+        {redirecting && (
+          <p className="font-pixel text-pixel-yellow animate-pulse">
+            Redirecting to alpha version...
+          </p>
+        )}
       </div>
     )
   }

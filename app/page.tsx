@@ -27,10 +27,10 @@ export default function Home() {
       });
 
       if (response.ok) {
-        window.alert("Thank you for joining our waitlist!");
-        setJumboEmail(""); // Clear the input after successful submission
+        window.location.href = "https://add-simulator-up6rf.ondigitalocean.app/";
       } else {
         const data = await response.json();
+        window.alert("Something went wrong. Please try again later.");
       }
     } catch (error) {
       console.error("Error:", error);
@@ -56,12 +56,14 @@ export default function Home() {
             </Link>
           </nav>
           <Button
-            disabled
-            variant="pixel"
+            variant="pixel-yellow"
             size="sm"
-            className="hidden md:inline-flex"
+            className="hidden md:inline-flex blink-animation"
+            asChild
           >
-            Play Now
+            <a href="https://add-simulator-up6rf.ondigitalocean.app/" target="_blank" rel="noopener noreferrer">
+              Play Alpha Version
+            </a>
           </Button>
         </div>
       </header>
@@ -75,28 +77,35 @@ export default function Home() {
               <p className="max-w-md font-pixel text-sm text-pixel-light-gray font-game">
                 Capture the flag in a world dominated by advertisements.
               </p>
-              <form
-                onSubmit={handleJumboSubmit}
-                className="w-full max-w-md mt-6"
-              >
-                <div className="flex">
-                  <Input
-                    type="email"
-                    placeholder="Your email"
-                    value={jumboEmail}
-                    onChange={(e) => setJumboEmail(e.target.value)}
-                    className="flex-grow rounded rounded-r-none"
-                    disabled={submitting}
-                  />
-                  <Button
-                    type="submit"
-                    disabled={submitting}
-                    className="px-8 rounded rounded-l-none"
-                  >
-                    {submitting ? "Sending..." : "Join waitlist"}
-                  </Button>
-                </div>
-              </form>
+              <div className="flex flex-col sm:flex-row gap-4 mt-6">
+                <form
+                  onSubmit={handleJumboSubmit}
+                  className="w-full"
+                >
+                  <div className="flex">
+                    <Input
+                      type="email"
+                      placeholder="Your email"
+                      value={jumboEmail}
+                      onChange={(e) => setJumboEmail(e.target.value)}
+                      className="flex-grow rounded rounded-r-none"
+                      disabled={submitting}
+                    />
+                    <Button
+                      type="submit"
+                      disabled={submitting}
+                      className="px-4 rounded rounded-l-none"
+                    >
+                      {submitting ? "Sending..." : "Join waitlist"}
+                    </Button>
+                  </div>
+                </form>
+                <Button variant="pixel-yellow" className="blink-animation" asChild>
+                  <a href="https://add-simulator-up6rf.ondigitalocean.app/" target="_blank" rel="noopener noreferrer">
+                    Play Alpha Version
+                  </a>
+                </Button>
+              </div>
             </div>
 
             <div className="flex items-center justify-center">
