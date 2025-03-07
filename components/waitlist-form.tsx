@@ -27,7 +27,7 @@ export function WaitlistForm() {
   if (submitted) {
     return (
       <div className="rounded-lg border-2 border-pixel-green bg-pixel-green/10 p-6 text-center">
-        <h3 className="mb-2 font-game text-xl text-pixel-green">You're on the list!</h3>
+        <h3 className="mb-2 font-game text-lg text-pixel-green sm:text-xl">You're on the list!</h3>
         <p className="font-pixel text-pixel-light-gray">
           We'll notify you when AD SIMULATOR is ready to play. Get ready for battle!
         </p>
@@ -40,8 +40,8 @@ export function WaitlistForm() {
       <div className="grid gap-4 sm:grid-cols-[1fr_auto]">
         <Input
           type="email"
-          placeholder="Enter your email"
-          className="h-12 border-2 border-pixel-border bg-pixel-dark font-pixel text-white placeholder:text-pixel-light-gray"
+          placeholder="Email"
+          className="h-12 text-sm border-2 border-pixel-border bg-pixel-dark font-pixel text-white placeholder:text-pixel-light-gray"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
@@ -53,7 +53,7 @@ export function WaitlistForm() {
             </span>
           ) : (
             <span className="flex items-center gap-2">
-              Join Waitlist <ArrowRight className="h-4 w-4" />
+              Join Waitlist
             </span>
           )}
         </Button>

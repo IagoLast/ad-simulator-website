@@ -45,7 +45,7 @@ export default function Home() {
       <header className="border-b border-pixel-border bg-pixel-dark px-4 py-4">
         <div className="container mx-auto flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="font-game text-xl text-white">AD SIMULATOR</span>
+            <span className="font-game text-lg text-white sm:text-xl">AD SIMULATOR</span>
           </div>
           <nav className="hidden space-x-4 md:block">
             <Link
@@ -69,10 +69,10 @@ export default function Home() {
         <section className="bg-pixel-pattern px-4 py-16 md:py-24">
           <div className="container mx-auto grid gap-8 md:grid-cols-2 md:gap-12">
             <div className="flex flex-col justify-center space-y-6">
-              <h1 className="font-game font-bold text-3xl text-white md:text-4xl lg:text-5xl">
+              <h1 className="font-game font-bold text-lg text-white sm:text-xl md:text-2xl lg:text-3xl">
                 AD <span className="text-pixel-green">SIMULATOR</span>
               </h1>
-              <p className="max-w-[600px] font-pixel text-lg text-pixel-light-gray font-game">
+              <p className="max-w-md font-pixel text-sm text-pixel-light-gray font-game">
                 Capture the flag in a world dominated by advertisements.
               </p>
               <form
@@ -123,7 +123,7 @@ export default function Home() {
           className="bg-pixel-dark px-4 py-16 border-t border-pixel-border"
         >
           <div className="container mx-auto max-w-5xl">
-            <h2 className="mb-8 text-center font-game text-3xl text-white md:text-4xl">
+            <h2 className="mb-8 text-center font-game text-2xl text-white md:text-4xl">
               REAL MONEY{" "}
               <span className="text-pixel-yellow blink-animation">PRIZES</span>
             </h2>
@@ -134,7 +134,7 @@ export default function Home() {
                   <Coins className="w-16 h-16 text-pixel-yellow" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="mb-4 font-game text-2xl text-pixel-yellow">
+                  <h3 className="mb-4 font-game text-xl text-pixel-yellow md:text-2xl">
                     WIN REAL MONEY!
                   </h3>
                   <p className="font-pixel text-pixel-light-gray text-lg mb-3">
@@ -145,51 +145,15 @@ export default function Home() {
                 </div>
               </div>
             </div>
-
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="border-2 border-pixel-border bg-pixel-card p-6 rounded-lg shadow-pixel text-center">
-                <h3 className="font-game text-xl text-white mb-4">
-                  Competitive Mode
-                </h3>
-                <p className="font-pixel text-pixel-light-gray">
-                  Activated every Friday at 8:00 PM. Participate with your team
-                  in intense CTF battles.
-                </p>
-              </div>
-              <div className="border-2 border-pixel-border bg-pixel-card p-6 rounded-lg shadow-pixel text-center">
-                <h3 className="font-game text-xl text-white mb-4">
-                  Weekly Prize
-                </h3>
-                <p className="font-pixel text-pixel-light-gray">
-                  The winning team takes the accumulated prize pool. Direct bank
-                  transfer to players.
-                </p>
-              </div>
-              <div className="border-2 border-pixel-border bg-pixel-card p-6 rounded-lg shadow-pixel text-center">
-                <h3 className="font-game text-xl text-white mb-4">
-                  Leaderboards
-                </h3>
-                <p className="font-pixel text-pixel-light-gray">
-                  Permanent ranking table. Special bonuses for the most
-                  consistent players.
-                </p>
-              </div>
-            </div>
-
-            <div className="mt-8 text-center">
-              <Button variant="pixel" size="lg" className="font-game">
-                COMPETITION REGISTRATION
-              </Button>
-            </div>
           </div>
         </section>
 
         <section id="features" className="bg-pixel-dark px-4 py-16">
           <div className="container mx-auto">
-            <h2 className="mb-12 text-center font-game text-3xl text-white md:text-4xl">
+            <h2 className="mb-12 text-center font-game text-2xl text-white md:text-4xl">
               Game <span className="text-pixel-green">Features</span>
             </h2>
-            <div className="grid gap-8 md:grid-cols-4">
+            <div className="grid gap-8 md:grid-cols-3">
               <div className="rounded-lg border-2 border-pixel-border bg-pixel-card p-6 shadow-pixel">
                 <div className="mb-4 inline-flex rounded-full bg-pixel-green/20 p-3">
                   <Flag className="h-6 w-6 text-pixel-green" />
@@ -215,18 +179,6 @@ export default function Home() {
                 </p>
               </div>
               <div className="rounded-lg border-2 border-pixel-border bg-pixel-card p-6 shadow-pixel">
-                <div className="mb-4 inline-flex rounded-full bg-pixel-red/20 p-3">
-                  <Users className="h-6 w-6 text-pixel-red" />
-                </div>
-                <h3 className="mb-2 font-game text-xl text-white">
-                  Ad Billboards
-                </h3>
-                <p className="font-pixel text-pixel-light-gray">
-                  Navigate a world filled with billboard advertisements from
-                  real companies. Use them for cover or as landmarks!
-                </p>
-              </div>
-              <div className="rounded-lg border-2 border-pixel-border bg-pixel-card p-6 shadow-pixel">
                 <div className="mb-4 inline-flex rounded-full bg-pixel-green/20 p-3">
                   <Mic className="h-6 w-6 text-pixel-green" />
                 </div>
@@ -244,7 +196,7 @@ export default function Home() {
 
         <section id="how-to-play" className="bg-pixel-pattern px-4 py-16">
           <div className="container mx-auto">
-            <h2 className="mb-12 text-center font-game text-3xl text-white md:text-4xl">
+            <h2 className="mb-12 text-center font-game text-2xl text-white md:text-4xl">
               How to <span className="text-pixel-green">Play</span>
             </h2>
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
@@ -301,7 +253,7 @@ export default function Home() {
           className="bg-pixel-dark px-4 py-16 border-y border-pixel-border"
         >
           <div className="container mx-auto">
-            <h2 className="mb-6 text-center font-game text-3xl text-white md:text-4xl">
+            <h2 className="mb-6 text-center font-game text-2xl text-white md:text-4xl">
               Advertise{" "}
               <span className="text-pixel-yellow blink-animation">
                 Your Brand
@@ -319,7 +271,7 @@ export default function Home() {
 
             <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
               <div className="rounded-lg border-2 border-pixel-border bg-pixel-card p-6 shadow-pixel">
-                <h3 className="mb-4 font-game text-2xl text-white">
+                <h3 className="mb-4 font-game text-xl text-white md:text-2xl">
                   Billboard Options
                 </h3>
                 <ul className="space-y-3 font-pixel text-pixel-light-gray">
@@ -347,7 +299,7 @@ export default function Home() {
               </div>
 
               <div className="rounded-lg border-2 border-pixel-border bg-pixel-card p-6 shadow-pixel">
-                <h3 className="mb-4 font-game text-2xl text-white">
+                <h3 className="mb-4 font-game text-xl text-white md:text-2xl">
                   Why Advertise With Us?
                 </h3>
                 <div className="space-y-4 font-pixel text-pixel-light-gray">
@@ -397,7 +349,7 @@ export default function Home() {
         <section id="waitlist" className="bg-pixel-dark px-4 py-16">
           <div className="container mx-auto max-w-3xl">
             <div className="rounded-lg border-2 border-pixel-border bg-pixel-card p-8 shadow-pixel">
-              <h2 className="mb-6 text-center font-game text-3xl text-white">
+              <h2 className="mb-6 text-center font-game text-xl text-white md:text-3xl">
                 Join the <span className="text-pixel-green">Waitlist</span>
               </h2>
               <p className="mb-8 text-center font-pixel text-pixel-light-gray">
@@ -414,7 +366,7 @@ export default function Home() {
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
             <div className="flex items-center gap-2">
               <Flag className="h-5 w-5 text-pixel-green flag-animation" />
-              <span className="font-game text-lg text-white">AD SIMULATOR</span>
+              <span className="font-game text-base text-white sm:text-lg">AD SIMULATOR</span>
             </div>
             <div className="flex gap-6">
               <Link
